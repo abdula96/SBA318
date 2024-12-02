@@ -1,0 +1,135 @@
+/* Basic reset */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  background-color: pink; /* Light background */
+  font-family: Arial, sans-serif; /* Font for text */
+  color: #333; /* Dark text for readability */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for main content */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Header styling */
+header {
+  text-align: center; /* Center the header text */
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #333; /* Dark text for the header */
+  font-size: 2.5em; /* Larger font size for header */
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em; /* Make button text bigger */
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Recipe list styling */
+.recipes ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0;
+}
+
+.recipes li {
+  margin-bottom: 20px; /* Add space between each recipe */
+}
+
+.recipes h3 {
+  font-size: 1.8em; /* Slightly larger font for recipe name */
+  margin-bottom: 10px; /* Space below the name */
+}
+
+.recipes p {
+  font-size: 1em;
+  margin-bottom: 5px; /* Space between ingredients and instructions */
+}
+
+/* Form styling */
+.recipe-form ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0;
+}
+
+.recipe-form li {
+  margin-bottom: 15px; /* Space between form inputs */
+}
+
+.recipe-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.recipe-form input,
+.recipe-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em; /* Make form text bigger */
+}
+
+.recipe-form textarea {
+  resize: vertical; /* Allow the user to resize the textarea */
+}
+
+/* Form submit button */
+.recipe-form button {
+  background-color: #4caf50; /* Green button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em; /* Larger text on submit button */
+}
+
+.recipe-form button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Footer and back links */
+a {
+  color: #007bff; /* Blue links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Underline link on hover */
+}
