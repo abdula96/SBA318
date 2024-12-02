@@ -1,15 +1,11 @@
 const express = require("express");
 const path = require("path");
-const methodOverride = require("method-override");
 const app = express();
 const port = 3000;
 
 // Middleware for parsing incoming request bodies
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Allow overriding HTTP methods using _method query param (needed for DELETE)
-app.use(methodOverride("_method"));
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));
@@ -40,7 +36,7 @@ app.get("/", (req, res) => {
 
 // Add recipe route - form to add a new recipe
 app.get("/add", (req, res) => {
-  res.render("addrecipe");
+  res.render("addRecipe");
 });
 
 // Handle form submission to add a recipe
@@ -56,8 +52,8 @@ app.post("/add", (req, res) => {
   res.redirect("/"); // Redirect back to the homepage to see the updated list
 });
 
-// Handle deletion of a recipe
-app.delete("/delete/:id", (req, res) => {
+// Handle deletion of a recipe (using POST instead of DELETE)
+app.post("/delete/:id", (req, res) => {
   const { id } = req.params;
   recipes = recipes.filter((recipe) => recipe.id !== parseInt(id)); // Remove recipe by ID
   res.redirect("/"); // Redirect to homepage after deletion
