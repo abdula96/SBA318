@@ -12,6 +12,29 @@
         <h1>Recipe Book</h1>
         <a href="/add" class="btn">Add New Recipe</a>
       </header>
+
+      <section class="recipes">
+        <h2>All Recipes</h2>
+        <ul>
+          <!-- Loop through each recipe -->
+          <% recipes.forEach(recipe => { %>
+          <li id="recipe-<%= recipe.id %>">
+            <h3><%= recipe.name %></h3>
+            <p><strong>Ingredients:</strong> <%= recipe.ingredients %></p>
+            <p><strong>Instructions:</strong> <%= recipe.instructions %></p>
+
+            <!-- Delete Button - onClick triggers deleteRecipe function with the recipe id -->
+            <form
+              action="/delete/<%= recipe.id %>"
+              method="POST"
+              style="display: inline"
+            >
+              <button type="submit" class="btn">Delete</button>
+            </form>
+          </li>
+          <% }); %>
+        </ul>
+      </section>
     </div>
   </body>
 </html>

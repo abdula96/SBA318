@@ -12,6 +12,43 @@
         <h1>Add New Recipe</h1>
       </header>
 
+      <form action="/add" method="POST" class="recipe-form">
+        <ul>
+          <!-- Recipe Name -->
+          <li>
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" id="recipeName" name="recipeName" required />
+          </li>
+
+          <!-- Ingredients -->
+          <li>
+            <label for="ingredients">Ingredients:</label>
+            <textarea
+              id="ingredients"
+              name="ingredients"
+              rows="4"
+              required
+            ></textarea>
+          </li>
+
+          <!-- Instructions -->
+          <li>
+            <label for="instructions">Instructions:</label>
+            <textarea
+              id="instructions"
+              name="instructions"
+              rows="4"
+              required
+            ></textarea>
+          </li>
+
+          <!-- Submit Button -->
+          <li>
+            <button type="submit" class="btn">Add Recipe</button>
+          </li>
+        </ul>
+      </form>
+
       <a href="/" class="btn">Back to Recipe Book</a>
     </div>
   </body>

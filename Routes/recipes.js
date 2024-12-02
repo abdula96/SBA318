@@ -40,3 +40,30 @@ router.post("/", validateRecipeData, (req, res) => {
   recipes.push(newRecipe);
   res.status(201).json(newRecipe);
 });
+
+// Update a recipe
+router.patch("/:id", validateRecipeData, (req, res) => {
+  const recipe = recipes[req.params.id];
+  if (!recipe) {
+    return res.status(404).send({ message: "Recipe not found" });
+  }
+  const { name, category, ingredients, steps } = req.body;
+  recipe.name = name || recipe.name;
+  recipe.category = category || recipe.category;
+  recipe.ingredients = ingredients || recipe.ingredients;
+  recipe.steps = steps || recipe.steps;
+
+  res.json(recipe);
+});
+
+// Delete a recipe
+router.delete("/:id", (req, res) => {
+  const recipeIndex = recipes.findIndex((r) => r.id === req.params.id);
+  if (recipeIndex === -1) {
+    return res.status(404).send({ message: "Recipe not found" });
+  }
+  recipes.splice(recipeIndex, 1);
+  res.status(204).send();
+});
+
+module.exports = router;

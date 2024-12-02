@@ -133,3 +133,17 @@ a {
 a:hover {
   text-decoration: underline; /* Underline link on hover */
 }
+
+/* Delete button styling */
+button[type="submit"] {
+  background-color: #f44336; /* Red background for delete button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
